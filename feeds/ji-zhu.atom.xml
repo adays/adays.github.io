@@ -7,7 +7,14 @@
 &lt;li&gt;pip install Markdown&lt;/li&gt;
 &lt;li&gt;pelican-quickstart&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;这些整完后就可以写blog了。&lt;/p&gt;</summary></entry><entry><title>实时策略</title><link href="/online%20learning.html" rel="alternate"></link><updated>2013-12-18T00:00:00+08:00</updated><author><name>haoyuan.huhy</name></author><id>tag:,2013-12-18:online learning.html</id><summary type="html">&lt;p&gt;传统的推荐以离线为主， 以预测用户偏好品牌为例，大致分为这几个步骤:&lt;/p&gt;
+&lt;p&gt;这些整完后就可以写blog了。&lt;/p&gt;
+&lt;p&gt;很多人一上手就用了octopress， 反而弄混了，这里解释下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;github pages, 在gh-pages下都是html文件。&lt;/li&gt;
+&lt;li&gt;octopress、pelican、jeklly， 都是用来生成这些html的。&lt;/li&gt;
+&lt;li&gt;理论上， 鉴于国内github的速度， 最好的办法是自己弄一台服务器，开一个最简单的http server。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;申请了一台阿里云的服务器， 准备部署。&lt;/p&gt;</summary></entry><entry><title>实时策略</title><link href="/online%20learning.html" rel="alternate"></link><updated>2013-12-18T00:00:00+08:00</updated><author><name>haoyuan.huhy</name></author><id>tag:,2013-12-18:online learning.html</id><summary type="html">&lt;p&gt;传统的推荐以离线为主， 以预测用户偏好品牌为例，大致分为这几个步骤:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;离线采集计算用户， 品牌等各个维度的特征。&lt;/li&gt;
 &lt;li&gt;根据业务目标给出样本集合， 比如比较典型的CTR， 对于给定样本数据， 点击为正例， 不点击为负例。候选集的挑选有时候充满了trick， 尤其在业务的主体流量不是推荐的时候。&lt;/li&gt;

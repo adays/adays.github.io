@@ -7,7 +7,14 @@
 &lt;li&gt;pip install Markdown&lt;/li&gt;
 &lt;li&gt;pelican-quickstart&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;这些整完后就可以写blog了。&lt;/p&gt;</summary></entry><entry><title>帮张侃找女朋友</title><link href="/bang-zhang-kan-zhao-nu-peng-you.html" rel="alternate"></link><updated>2013-12-19T00:00:00+08:00</updated><author><name>haoyuan.huhy</name></author><id>tag:,2013-12-19:bang-zhang-kan-zhao-nu-peng-you.html</id><summary type="html">&lt;p&gt;动车是杭州开往上海的， 我们的厂工张侃同学在西厂干活， 排除为了爱情现身的情况， 一周内有五天时间滞留杭州晚上可以出发邂逅。&lt;/p&gt;
+&lt;p&gt;这些整完后就可以写blog了。&lt;/p&gt;
+&lt;p&gt;很多人一上手就用了octopress， 反而弄混了，这里解释下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;github pages, 在gh-pages下都是html文件。&lt;/li&gt;
+&lt;li&gt;octopress、pelican、jeklly， 都是用来生成这些html的。&lt;/li&gt;
+&lt;li&gt;理论上， 鉴于国内github的速度， 最好的办法是自己弄一台服务器，开一个最简单的http server。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;申请了一台阿里云的服务器， 准备部署。&lt;/p&gt;</summary></entry><entry><title>帮张侃找女朋友</title><link href="/bang-zhang-kan-zhao-nu-peng-you.html" rel="alternate"></link><updated>2013-12-19T00:00:00+08:00</updated><author><name>haoyuan.huhy</name></author><id>tag:,2013-12-19:bang-zhang-kan-zhao-nu-peng-you.html</id><summary type="html">&lt;p&gt;动车是杭州开往上海的， 我们的厂工张侃同学在西厂干活， 排除为了爱情现身的情况， 一周内有五天时间滞留杭州晚上可以出发邂逅。&lt;/p&gt;
 &lt;p&gt;妹子的情况比较复杂， 一种可能是暂时来杭州旅游， 常驻上海； 一种是去上海旅游， 常驻杭州； 一种是和我们的厂工相似， 周末往上海跑。但是从妹子在车上的表现分析：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;如果是常坐动车的应该对温度情况有充分的了解， 不会出现衣服不够导致冻着。&lt;/li&gt;
