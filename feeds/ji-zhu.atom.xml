@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>one day</title><link href="/" rel="alternate"></link><link href="/feeds/ji-zhu.atom.xml" rel="self"></link><id>/</id><updated>2013-12-18T14:53:55+08:00</updated><entry><title>实时策略</title><link href="/shi-shi-ce-lue.html" rel="alternate"></link><updated>2013-12-18T14:53:55+08:00</updated><author><name>haoyuan.huhy</name></author><id>tag:,2013-12-18:shi-shi-ce-lue.html</id><summary type="html">&lt;p&gt;传统的推荐以离线为主， 以预测用户偏好品牌为例，大致分为这几个步骤:&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>One Day</title><link href="/" rel="alternate"></link><link href="/feeds/ji-zhu.atom.xml" rel="self"></link><id>/</id><updated>2014-08-18T23:07:40+08:00</updated><entry><title>实时策略</title><link href="/online%20learning.html" rel="alternate"></link><updated>2014-08-18T23:07:40+08:00</updated><author><name>haoyuan.huhy</name></author><id>tag:,2014-08-18:online learning.html</id><summary type="html">&lt;p&gt;传统的推荐以离线为主， 以预测用户偏好品牌为例，大致分为这几个步骤:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;离线采集计算用户， 品牌等各个维度的特征。&lt;/li&gt;
 &lt;li&gt;根据业务目标给出样本集合， 比如比较典型的CTR， 对于给定样本数据， 点击为正例， 不点击为负例。候选集的挑选有时候充满了trick， 尤其在业务的主体流量不是推荐的时候。&lt;/li&gt;
