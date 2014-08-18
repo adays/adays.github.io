@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>one day</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2013-12-18T14:53:55+01:00</updated><entry><title>实时策略</title><link href="/shi-shi-ce-lue.html" rel="alternate"></link><updated>2013-12-18T14:53:55+01:00</updated><author><name>haoyuan.huhy</name></author><id>tag:,2013-12-18:shi-shi-ce-lue.html</id><summary type="html">&lt;p&gt;传统的推荐以离线为主， 以预测用户偏好品牌为例，大致分为这几个步骤:&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>one day</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2013-12-18T14:53:55+08:00</updated><entry><title>实时策略</title><link href="/shi-shi-ce-lue.html" rel="alternate"></link><updated>2013-12-18T14:53:55+08:00</updated><author><name>haoyuan.huhy</name></author><id>tag:,2013-12-18:shi-shi-ce-lue.html</id><summary type="html">&lt;p&gt;传统的推荐以离线为主， 以预测用户偏好品牌为例，大致分为这几个步骤:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;离线采集计算用户， 品牌等各个维度的特征。&lt;/li&gt;
 &lt;li&gt;根据业务目标给出样本集合， 比如比较典型的CTR， 对于给定样本数据， 点击为正例， 不点击为负例。候选集的挑选有时候充满了trick， 尤其在业务的主体流量不是推荐的时候。&lt;/li&gt;
@@ -37,7 +37,7 @@
 &lt;p&gt;对于实时而言， 不仅仅是算法上的变更， 对系统架构也有巨大的挑战。
     下图是Netflix的实时推荐的架构图：
 "&lt;img alt="Netflix架构" src="/images/online系统.jpg" /&gt;"&lt;/p&gt;
-&lt;p&gt;系统上， Netflix分为online, near online, offline三个部分， nearline是用户最近的行为数据， 利用流失计算获得一些结果， 产生的结果送到online 用以更新模型。&lt;/p&gt;</summary></entry><entry><title>Hello Girls</title><link href="/hello-girls.html" rel="alternate"></link><updated>2010-12-03T10:20:00+01:00</updated><author><name>haoyuan.huhy</name></author><id>tag:,2010-12-03:hello-girls.html</id><summary type="html">&lt;h1&gt;hello girls&lt;/h1&gt;
+&lt;p&gt;系统上， Netflix分为online, near online, offline三个部分， nearline是用户最近的行为数据， 利用流失计算获得一些结果， 产生的结果送到online 用以更新模型。&lt;/p&gt;</summary></entry><entry><title>Hello Girls</title><link href="/hello-girls.html" rel="alternate"></link><updated>2010-12-03T10:20:00+08:00</updated><author><name>haoyuan.huhy</name></author><id>tag:,2010-12-03:hello-girls.html</id><summary type="html">&lt;h1&gt;hello girls&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;sexy&lt;/li&gt;
 &lt;li&gt;hot&lt;/li&gt;
