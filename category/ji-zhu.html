@@ -23,15 +23,44 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/online learning.html">实时策略</a></h1>
+                    <h1 class="entry-title"><a href="/shi-yong-pelicanda-jian-bo-ke.html">使用pelican搭建博客</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2014-08-18T23:07:40">
+        <abbr class="published" title="2014-08-18T00:00:00">
+                 Mon 18 August 2014
+        </abbr>
+
+<p> <a href="/category/ji-zhu.html">技术</a> </p>
+
+</footer><!-- /.post-info --><p>之前的博客用的是octopress， 挺好的， 也没啥毛病， 就是我不会ruby，出个小问题纠结大半天。</p>
+<p>因为最熟悉的语言是python，找了下有没有python的frame，发现还真有： pelican。</p>
+<p>这下子就简单了：</p>
+<ol>
+<li>pip install pelican</li>
+<li>pip install Markdown</li>
+<li>pelican-quickstart</li>
+</ol>
+<p>这些整完后就可以写blog了。</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/online learning.html" rel="bookmark"
+                           title="Permalink to 实时策略">实时策略</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-12-18T00:00:00">
                  Wed 18 December 2013
         </abbr>
 
 <p> <a href="/category/ji-zhu.html">技术</a> </p>
 
-</footer><!-- /.post-info --><p>传统的推荐以离线为主， 以预测用户偏好品牌为例，大致分为这几个步骤:</p>
+</footer><!-- /.post-info -->                <p>传统的推荐以离线为主， 以预测用户偏好品牌为例，大致分为这几个步骤:</p>
 <ul>
 <li>离线采集计算用户， 品牌等各个维度的特征。</li>
 <li>根据业务目标给出样本集合， 比如比较典型的CTR， 对于给定样本数据， 点击为正例， 不点击为负例。候选集的挑选有时候充满了trick， 尤其在业务的主体流量不是推荐的时候。</li>
@@ -51,29 +80,15 @@
 <li>做在线预测</li>
 </ol>
 <p>另一部分采用的是online learning, 利用用户不停的行为反馈（包含显式的和隐式的）， 来调整特征权重。</p>
-<p>现在在考虑一种在线增强学习的方式， 假定我们现在有四种投放策略：a, b, c, d。
-对于缺乏历史信息的新用户， 在没有任何信息的情况下， 我们先以轮播的方式在所有的位置投放a, b, c, d四种策略。
-随后我们采集相应的反馈信息：</p>
-<ul>
-<li>点击：显式正反馈</li>
-<li>删除： 显式负反馈</li>
-<li>未点击： 隐式负反馈</li>
-</ul>
-<p>在这一过程中快速积累用户对不同策略的敏感程度，同时对离线的预测结果进行纠正。</p>
-<p>由于单独位置对用户的曝光机会有限， 需要以打通的眼光看待所有的投放位置， 将他作为一个整体：</p>
-<ol>
-<li>收集到显式负反馈的策略在全局降分</li>
-<li>收集到显式负反馈的目标在全局过滤</li>
-</ol>
-<p>最轻量级的快速尝试方式是， 对于某部分用户而言， 预估的投放策略可信度已经低于热门了， 或者补全的时候采用相似算法的可信度已经低于热门了， 就可以通过快速切换策略达到在线选择的目的。</p>
-<p>对于实时而言， 不仅仅是算法上的变更， 对系统架构也有巨大的挑战。
-    下图是Netflix的实时推荐的架构图：
-"<img alt="Netflix架构" src="/images/online系统.jpg" />"</p>
-<p>系统上， Netflix分为online, near online, offline三个部分， nearline是用户最近的行为数据， 利用流失计算获得一些结果， 产生的结果送到online 用以更新模型。</p>                </article>
+<p>现在在考虑一种在线增强学习的方式， 假定我们现在有四种投放策略 ...</p>
+                <a class="readmore" href="/online learning.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
 <p class="paginator">
     Page 1 / 1
 </p>
-            </aside><!-- /#featured -->
+                </section><!-- /#content -->
         <section id="extras" class="body">
                 <div class="social">
                         <h2>social</h2>
