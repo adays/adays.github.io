@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>One Day</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2014-08-19T00:00:00+08:00</updated><entry><title>噪音数据的处理</title><link href="/zao-yin-shu-ju-de-chu-li.html" rel="alternate"></link><updated>2014-08-19T00:00:00+08:00</updated><author><name>haoyuan.huhy</name></author><id>tag:,2014-08-19:zao-yin-shu-ju-de-chu-li.html</id><summary type="html">&lt;p&gt;最近在追踪模型的时候， 发现了一系列比较严重的数据污染， 有些来自于采集过程， 有些则是spam， 顺手整理了一下噪音处理的相关tips。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>One Day</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2014-08-19T00:00:00+08:00</updated><entry><title>机器学习的野路子</title><link href="/ji-qi-xue-xi-de-ye-lu-zi.html" rel="alternate"></link><updated>2014-08-19T00:00:00+08:00</updated><author><name>haoyuan.huhy@gmail.com</name></author><id>tag:,2014-08-19:ji-qi-xue-xi-de-ye-lu-zi.html</id><summary type="html">&lt;h1&gt;前言&lt;/h1&gt;
+&lt;p&gt;机器学习很大程度上归为三个步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;问题定义&lt;/li&gt;
+&lt;li&gt;数据准备&lt;/li&gt;
+&lt;li&gt;特征工程&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在漫漫长河中， 各路人士留下个各种民间智慧。&lt;/p&gt;
+&lt;h1&gt;ABE：永远在融合&lt;/h1&gt;
+&lt;p&gt;不管怎么样， ensembleing， 免费的午餐。&lt;/p&gt;
+&lt;h1&gt;高置信度下才自动允许或者自动禁止&lt;/h1&gt;
+&lt;h1&gt;Feature Hash&lt;/h1&gt;
+&lt;p&gt;将高纬度的特征利用hash函数映射到低纬度的特征。&lt;/p&gt;
+&lt;h1&gt;样本严重不均衡&lt;/h1&gt;
+&lt;p&gt;将分类问题换成rank问题。&lt;/p&gt;
+&lt;h1&gt;一坨坨的分类器&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;bad， good&lt;/li&gt;
+&lt;li&gt;bad a， bad b&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;性能瓶颈&lt;/h1&gt;
+&lt;p&gt;十有八九在特征提取&lt;/p&gt;
+&lt;h1&gt;指标监控&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;准确率， 召回率&lt;/li&gt;
+&lt;li&gt;输入的特征分布&lt;/li&gt;
+&lt;li&gt;输出的得分分布&lt;/li&gt;
+&lt;li&gt;输出的分类结果分布&lt;/li&gt;
+&lt;li&gt;人工介入&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;专家智慧&lt;/h1&gt;
+&lt;p&gt;有时候允许砖家来拍规则， 前提的确是砖家&lt;/p&gt;</summary></entry><entry><title>噪音数据的处理</title><link href="/zao-yin-shu-ju-de-chu-li.html" rel="alternate"></link><updated>2014-08-19T00:00:00+08:00</updated><author><name>haoyuan.huhy@gmail.com</name></author><id>tag:,2014-08-19:zao-yin-shu-ju-de-chu-li.html</id><summary type="html">&lt;p&gt;最近在追踪模型的时候， 发现了一系列比较严重的数据污染， 有些来自于采集过程， 有些则是spam， 顺手整理了一下噪音处理的相关tips。&lt;/p&gt;
 &lt;h1&gt;大数据中的预处理&lt;/h1&gt;
 &lt;h1&gt;步骤&lt;/h1&gt;
 &lt;ul&gt;
@@ -74,7 +105,7 @@
 &lt;li&gt;重复记录&lt;/li&gt;
 &lt;li&gt;不完整数据&lt;/li&gt;
 &lt;li&gt;不一致数据&lt;/li&gt;
-&lt;/ul&gt;</summary></entry><entry><title>使用pelican搭建博客</title><link href="/shi-yong-pelicanda-jian-bo-ke.html" rel="alternate"></link><updated>2014-08-18T00:00:00+08:00</updated><author><name>haoyuan.huhy</name></author><id>tag:,2014-08-18:shi-yong-pelicanda-jian-bo-ke.html</id><summary type="html">&lt;p&gt;之前的博客用的是octopress， 挺好的， 也没啥毛病， 就是我不会ruby，出个小问题纠结大半天。&lt;/p&gt;
+&lt;/ul&gt;</summary></entry><entry><title>使用pelican搭建博客</title><link href="/shi-yong-pelicanda-jian-bo-ke.html" rel="alternate"></link><updated>2014-08-18T00:00:00+08:00</updated><author><name>haoyuan.huhy@gmail.com</name></author><id>tag:,2014-08-18:shi-yong-pelicanda-jian-bo-ke.html</id><summary type="html">&lt;p&gt;之前的博客用的是octopress， 挺好的， 也没啥毛病， 就是我不会ruby，出个小问题纠结大半天。&lt;/p&gt;
 &lt;p&gt;因为最熟悉的语言是python，找了下有没有python的frame，发现还真有： pelican。&lt;/p&gt;
 &lt;p&gt;这下子就简单了：&lt;/p&gt;
 &lt;ol&gt;
@@ -89,7 +120,15 @@
 &lt;li&gt;octopress、pelican、jeklly， 都是用来生成这些html的。&lt;/li&gt;
 &lt;li&gt;理论上， 鉴于国内github的速度， 最好的办法是自己弄一台服务器，开一个最简单的http server。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;申请了一台阿里云的服务器， 准备部署。&lt;/p&gt;</summary></entry><entry><title>帮张侃找女朋友</title><link href="/bang-zhang-kan-zhao-nu-peng-you.html" rel="alternate"></link><updated>2013-12-19T00:00:00+08:00</updated><author><name>haoyuan.huhy</name></author><id>tag:,2013-12-19:bang-zhang-kan-zhao-nu-peng-you.html</id><summary type="html">&lt;p&gt;动车是杭州开往上海的， 我们的厂工张侃同学在西厂干活， 排除为了爱情现身的情况， 一周内有五天时间滞留杭州晚上可以出发邂逅。&lt;/p&gt;
+&lt;p&gt;为了方便起见， 改写了MakeFile文件， 增加了对百度云的支持， 同时因为一部分文档是不适合泄露的，额外建立一个private的content和output的文件夹， 在MakeFile的html和serve那里增加了对这些的支持。&lt;/p&gt;
+&lt;p&gt;申请了一台阿里云的服务器， 准备部署。&lt;/p&gt;
+&lt;h2&gt;update&lt;/h2&gt;
+&lt;p&gt;申请到阿里云的服务器了， 在服务器上用了个最简单的httpserver:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;nohup&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="n"&gt;SimpleHTTPServer&lt;/span&gt; &lt;span class="mi"&gt;80&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;在makefile里面配置rsync同步。&lt;/p&gt;</summary></entry><entry><title>帮张侃找女朋友</title><link href="/bang-zhang-kan-zhao-nu-peng-you.html" rel="alternate"></link><updated>2013-12-19T00:00:00+08:00</updated><author><name>haoyuan.huhy@gmail.com</name></author><id>tag:,2013-12-19:bang-zhang-kan-zhao-nu-peng-you.html</id><summary type="html">&lt;p&gt;动车是杭州开往上海的， 我们的厂工张侃同学在西厂干活， 排除为了爱情现身的情况， 一周内有五天时间滞留杭州晚上可以出发邂逅。&lt;/p&gt;
 &lt;p&gt;妹子的情况比较复杂， 一种可能是暂时来杭州旅游， 常驻上海； 一种是去上海旅游， 常驻杭州； 一种是和我们的厂工相似， 周末往上海跑。但是从妹子在车上的表现分析：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;如果是常坐动车的应该对温度情况有充分的了解， 不会出现衣服不够导致冻着。&lt;/li&gt;
@@ -149,7 +188,7 @@
         (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
     }
 &lt;/script&gt;
-</summary></entry><entry><title>实时策略</title><link href="/online%20learning.html" rel="alternate"></link><updated>2013-12-18T00:00:00+08:00</updated><author><name>haoyuan.huhy</name></author><id>tag:,2013-12-18:online learning.html</id><summary type="html">&lt;p&gt;传统的推荐以离线为主， 以预测用户偏好品牌为例，大致分为这几个步骤:&lt;/p&gt;
+</summary></entry><entry><title>实时策略</title><link href="/online%20learning.html" rel="alternate"></link><updated>2013-12-18T00:00:00+08:00</updated><author><name>haoyuan.huhy@gmail.com</name></author><id>tag:,2013-12-18:online learning.html</id><summary type="html">&lt;p&gt;传统的推荐以离线为主， 以预测用户偏好品牌为例，大致分为这几个步骤:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;离线采集计算用户， 品牌等各个维度的特征。&lt;/li&gt;
 &lt;li&gt;根据业务目标给出样本集合， 比如比较典型的CTR， 对于给定样本数据， 点击为正例， 不点击为负例。候选集的挑选有时候充满了trick， 尤其在业务的主体流量不是推荐的时候。&lt;/li&gt;
@@ -187,7 +226,7 @@
 &lt;p&gt;对于实时而言， 不仅仅是算法上的变更， 对系统架构也有巨大的挑战。
     下图是Netflix的实时推荐的架构图：
 "&lt;img alt="Netflix架构" src="/images/online系统.jpg" /&gt;"&lt;/p&gt;
-&lt;p&gt;系统上， Netflix分为online, near online, offline三个部分， nearline是用户最近的行为数据， 利用流失计算获得一些结果， 产生的结果送到online 用以更新模型。&lt;/p&gt;</summary></entry><entry><title>Hello Girls</title><link href="/hello-girls.html" rel="alternate"></link><updated>2010-12-03T10:20:00+08:00</updated><author><name>haoyuan.huhy</name></author><id>tag:,2010-12-03:hello-girls.html</id><summary type="html">&lt;h1&gt;hello girls&lt;/h1&gt;
+&lt;p&gt;系统上， Netflix分为online, near online, offline三个部分， nearline是用户最近的行为数据， 利用流失计算获得一些结果， 产生的结果送到online 用以更新模型。&lt;/p&gt;</summary></entry><entry><title>Hello Girls</title><link href="/hello-girls.html" rel="alternate"></link><updated>2010-12-03T10:20:00+08:00</updated><author><name>haoyuan.huhy@gmail.com</name></author><id>tag:,2010-12-03:hello-girls.html</id><summary type="html">&lt;h1&gt;hello girls&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;sexy&lt;/li&gt;
 &lt;li&gt;hot&lt;/li&gt;

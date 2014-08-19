@@ -23,15 +23,67 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/zao-yin-shu-ju-de-chu-li.html">噪音数据的处理</a></h1>
+                    <h1 class="entry-title"><a href="/ji-qi-xue-xi-de-ye-lu-zi.html">机器学习的野路子</a></h1>
 <footer class="post-info">
         <abbr class="published" title="2014-08-19T00:00:00">
                  Tue 19 August 2014
         </abbr>
-
+        <p>haoyuan.huhy@gmail.com</p>
 <p> <a href="/category/ji-zhu.html">技术</a> </p>
 
-</footer><!-- /.post-info --><p>最近在追踪模型的时候， 发现了一系列比较严重的数据污染， 有些来自于采集过程， 有些则是spam， 顺手整理了一下噪音处理的相关tips。</p>
+</footer><!-- /.post-info --><h1>前言</h1>
+<p>机器学习很大程度上归为三个步骤：</p>
+<ol>
+<li>问题定义</li>
+<li>数据准备</li>
+<li>特征工程</li>
+</ol>
+<p>在漫漫长河中， 各路人士留下个各种民间智慧。</p>
+<h1>ABE：永远在融合</h1>
+<p>不管怎么样， ensembleing， 免费的午餐。</p>
+<h1>高置信度下才自动允许或者自动禁止</h1>
+<h1>Feature Hash</h1>
+<p>将高纬度的特征利用hash函数映射到低纬度的特征。</p>
+<h1>样本严重不均衡</h1>
+<p>将分类问题换成rank问题。</p>
+<h1>一坨坨的分类器</h1>
+<ul>
+<li>bad， good</li>
+<li>bad a， bad b</li>
+</ul>
+<h1>性能瓶颈</h1>
+<p>十有八九在特征提取</p>
+<h1>指标监控</h1>
+<ul>
+<li>准确率， 召回率</li>
+<li>输入的特征分布</li>
+<li>输出的得分分布</li>
+<li>输出的分类结果分布</li>
+<li>人工介入</li>
+</ul>
+<h1>专家智慧</h1>
+<p>有时候允许砖家来拍规则， 前提的确是砖家</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/zao-yin-shu-ju-de-chu-li.html" rel="bookmark"
+                           title="Permalink to 噪音数据的处理">噪音数据的处理</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-08-19T00:00:00">
+                 Tue 19 August 2014
+        </abbr>
+        <p>haoyuan.huhy@gmail.com</p>
+<p> <a href="/category/ji-zhu.html">技术</a> </p>
+
+</footer><!-- /.post-info -->                <p>最近在追踪模型的时候， 发现了一系列比较严重的数据污染， 有些来自于采集过程， 有些则是spam， 顺手整理了一下噪音处理的相关tips。</p>
 <h1>大数据中的预处理</h1>
 <h1>步骤</h1>
 <ul>
@@ -75,43 +127,10 @@
 <h1>data clean</h1>
 <h3>数据清洗步骤</h3>
 <ul>
-<li>缺失值填充</li>
-<li>越界值界定</li>
-<li>噪音平滑</li>
-<li>不一致数据纠正 </li>
-</ul>
-<h1>缺失值</h1>
-<p>说的什么</p>
-<ul>
-<li>忽略缺失值， 尤其在部分分类情况下</li>
-<li>手动添加</li>
-<li>常数值替换</li>
-<li>均值替换</li>
-<li>分类均值替换</li>
-<li>最可能值替换：利用贝叶斯或者决策树</li>
-</ul>
-<h1>噪音数据</h1>
-<ul>
-<li>噪音:随机错误</li>
-</ul>
-<p>错误值产生原因</p>
-<ul>
-<li>收集过程</li>
-<li>输入过程</li>
-<li>数据转化过程</li>
-<li>命名不一致</li>
-</ul>
-<p>其余数据问题 </p>
-<ul>
-<li>重复记录</li>
-<li>不完整数据</li>
-<li>不一致数据</li>
-</ul>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+<li>缺失值填充 ...</li></ul>
+                <a class="readmore" href="/zao-yin-shu-ju-de-chu-li.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
@@ -124,7 +143,7 @@
         <abbr class="published" title="2014-08-18T00:00:00">
                  Mon 18 August 2014
         </abbr>
-
+        <p>haoyuan.huhy@gmail.com</p>
 <p> <a href="/category/ji-zhu.html">技术</a> </p>
 
 </footer><!-- /.post-info -->                <p>之前的博客用的是octopress， 挺好的， 也没啥毛病， 就是我不会ruby，出个小问题纠结大半天。</p>
@@ -142,7 +161,15 @@
 <li>octopress、pelican、jeklly， 都是用来生成这些html的。</li>
 <li>理论上， 鉴于国内github的速度， 最好的办法是自己弄一台服务器，开一个最简单的http server。</li>
 </ul>
+<p>为了方便起见， 改写了MakeFile文件， 增加了对百度云的支持， 同时因为一部分文档是不适合泄露的，额外建立一个private的content和output的文件夹， 在MakeFile的html和serve那里增加了对这些的支持。</p>
 <p>申请了一台阿里云的服务器， 准备部署。</p>
+<h2>update</h2>
+<p>申请到阿里云的服务器了， 在服务器上用了个最简单的httpserver:</p>
+<div class="highlight"><pre><span class="n">nohup</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">SimpleHTTPServer</span> <span class="mi">80</span> <span class="o">&amp;</span>
+</pre></div>
+
+
+<p>在makefile里面配置rsync同步。</p>
                 <a class="readmore" href="/shi-yong-pelicanda-jian-bo-ke.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
@@ -158,7 +185,7 @@
         <abbr class="published" title="2013-12-19T00:00:00">
                  Thu 19 December 2013
         </abbr>
-
+        <p>haoyuan.huhy@gmail.com</p>
 <p> <a href="/category/za-sui.html">杂碎</a> </p>
 
 </footer><!-- /.post-info -->                <p>动车是杭州开往上海的， 我们的厂工张侃同学在西厂干活， 排除为了爱情现身的情况， 一周内有五天时间滞留杭州晚上可以出发邂逅。</p>
@@ -218,7 +245,7 @@
         <abbr class="published" title="2013-12-18T00:00:00">
                  Wed 18 December 2013
         </abbr>
-
+        <p>haoyuan.huhy@gmail.com</p>
 <p> <a href="/category/ji-zhu.html">技术</a> </p>
 
 </footer><!-- /.post-info -->                <p>传统的推荐以离线为主， 以预测用户偏好品牌为例，大致分为这几个步骤:</p>
@@ -257,7 +284,7 @@
         <abbr class="published" title="2010-12-03T10:20:00">
                  Fri 03 December 2010
         </abbr>
-
+        <p>haoyuan.huhy@gmail.com</p>
 <p> <a href="/category/ri-zhi.html">日志</a> </p>
 
 </footer><!-- /.post-info -->                <h1>hello girls</h1>

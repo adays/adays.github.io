@@ -20,5 +20,14 @@ category:技术
 * octopress、pelican、jeklly， 都是用来生成这些html的。
 * 理论上， 鉴于国内github的速度， 最好的办法是自己弄一台服务器，开一个最简单的http server。
 
+
+为了方便起见， 改写了MakeFile文件， 增加了对百度云的支持， 同时因为一部分文档是不适合泄露的，额外建立一个private的content和output的文件夹， 在MakeFile的html和serve那里增加了对这些的支持。
+
 申请了一台阿里云的服务器， 准备部署。
 
+## update
+申请到阿里云的服务器了， 在服务器上用了个最简单的httpserver:
+```shell
+nohup python -m SimpleHTTPServer 80 &
+```
+在makefile里面配置rsync同步。

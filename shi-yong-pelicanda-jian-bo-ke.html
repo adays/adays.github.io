@@ -33,7 +33,7 @@
         <abbr class="published" title="2014-08-18T00:00:00">
                  Mon 18 August 2014
         </abbr>
-
+        <p>haoyuan.huhy@gmail.com</p>
 <p> <a href="/category/ji-zhu.html">技术</a> </p>
 
 </footer><!-- /.post-info -->      <p>之前的博客用的是octopress， 挺好的， 也没啥毛病， 就是我不会ruby，出个小问题纠结大半天。</p>
@@ -51,7 +51,15 @@
 <li>octopress、pelican、jeklly， 都是用来生成这些html的。</li>
 <li>理论上， 鉴于国内github的速度， 最好的办法是自己弄一台服务器，开一个最简单的http server。</li>
 </ul>
+<p>为了方便起见， 改写了MakeFile文件， 增加了对百度云的支持， 同时因为一部分文档是不适合泄露的，额外建立一个private的content和output的文件夹， 在MakeFile的html和serve那里增加了对这些的支持。</p>
 <p>申请了一台阿里云的服务器， 准备部署。</p>
+<h2>update</h2>
+<p>申请到阿里云的服务器了， 在服务器上用了个最简单的httpserver:</p>
+<div class="highlight"><pre><span class="n">nohup</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">SimpleHTTPServer</span> <span class="mi">80</span> <span class="o">&amp;</span>
+</pre></div>
+
+
+<p>在makefile里面配置rsync同步。</p>
     </div><!-- /.entry-content -->
 
   </article>
