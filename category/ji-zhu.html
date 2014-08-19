@@ -23,7 +23,103 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/shi-yong-pelicanda-jian-bo-ke.html">使用pelican搭建博客</a></h1>
+                    <h1 class="entry-title"><a href="/zao-yin-shu-ju-de-chu-li.html">噪音数据的处理</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2014-08-19T00:00:00">
+                 Tue 19 August 2014
+        </abbr>
+
+<p> <a href="/category/ji-zhu.html">技术</a> </p>
+
+</footer><!-- /.post-info --><p>最近在追踪模型的时候， 发现了一系列比较严重的数据污染， 有些来自于采集过程， 有些则是spam， 顺手整理了一下噪音处理的相关tips。</p>
+<h1>大数据中的预处理</h1>
+<h1>步骤</h1>
+<ul>
+<li>数据清洗</li>
+<li>数据集成</li>
+<li>数据转换</li>
+<li>数据降维</li>
+</ul>
+<h1>WHY</h1>
+<ul>
+<li>大数据带来的问题是， 海量的脏数据<ul>
+<li>缺失：缺少某种类型的数据， 缺少部分样本的数据</li>
+<li>噪音：数据收集过程中导致的错误或者越界</li>
+<li>矛盾：数据之间互相矛盾</li>
+</ul>
+</li>
+<li>没有高质量的数据， 就没有高质量的数据挖掘结果<ul>
+<li>决策依赖于高质量的数据</li>
+<li>模型依赖于高质量的数据</li>
+</ul>
+</li>
+</ul>
+<h1>measure</h1>
+<ul>
+<li>准确度</li>
+<li>完整度</li>
+<li>一致性</li>
+<li>时间轴</li>
+<li>可信度</li>
+<li>附加值</li>
+<li>可解释性</li>
+<li>可获得性</li>
+</ul>
+<h1>main mission</h1>
+<ul>
+<li>数据清洗: 缺失值填充， 噪音平滑， 异常值处理</li>
+<li>数据集成: 多种来源数据集成</li>
+<li>数据转换: 标准化</li>
+<li>数据降维: 合并相似数据   </li>
+</ul>
+<h1>data clean</h1>
+<h3>数据清洗步骤</h3>
+<ul>
+<li>缺失值填充</li>
+<li>越界值界定</li>
+<li>噪音平滑</li>
+<li>不一致数据纠正 </li>
+</ul>
+<h1>缺失值</h1>
+<p>说的什么</p>
+<ul>
+<li>忽略缺失值， 尤其在部分分类情况下</li>
+<li>手动添加</li>
+<li>常数值替换</li>
+<li>均值替换</li>
+<li>分类均值替换</li>
+<li>最可能值替换：利用贝叶斯或者决策树</li>
+</ul>
+<h1>噪音数据</h1>
+<ul>
+<li>噪音:随机错误</li>
+</ul>
+<p>错误值产生原因</p>
+<ul>
+<li>收集过程</li>
+<li>输入过程</li>
+<li>数据转化过程</li>
+<li>命名不一致</li>
+</ul>
+<p>其余数据问题 </p>
+<ul>
+<li>重复记录</li>
+<li>不完整数据</li>
+<li>不一致数据</li>
+</ul>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/shi-yong-pelicanda-jian-bo-ke.html" rel="bookmark"
+                           title="Permalink to 使用pelican搭建博客">使用pelican搭建博客</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2014-08-18T00:00:00">
                  Mon 18 August 2014
@@ -31,7 +127,7 @@
 
 <p> <a href="/category/ji-zhu.html">技术</a> </p>
 
-</footer><!-- /.post-info --><p>之前的博客用的是octopress， 挺好的， 也没啥毛病， 就是我不会ruby，出个小问题纠结大半天。</p>
+</footer><!-- /.post-info -->                <p>之前的博客用的是octopress， 挺好的， 也没啥毛病， 就是我不会ruby，出个小问题纠结大半天。</p>
 <p>因为最熟悉的语言是python，找了下有没有python的frame，发现还真有： pelican。</p>
 <p>这下子就简单了：</p>
 <ol>
@@ -46,12 +142,10 @@
 <li>octopress、pelican、jeklly， 都是用来生成这些html的。</li>
 <li>理论上， 鉴于国内github的速度， 最好的办法是自己弄一台服务器，开一个最简单的http server。</li>
 </ul>
-<p>申请了一台阿里云的服务器， 准备部署。</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+<p>申请了一台阿里云的服务器， 准备部署。</p>
+                <a class="readmore" href="/shi-yong-pelicanda-jian-bo-ke.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
