@@ -129,7 +129,7 @@
 
 
 &lt;p&gt;在makefile里面配置rsync同步。
-大家可以访问这个地址&lt;a href="www.juzishanshu.com"&gt;橘子杉树&lt;/a&gt;&lt;/p&gt;
+大家可以访问这个地址&lt;a href="http://www.juzishanshu.com"&gt;橘子杉树&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;额， 最终有个坑， gh-pages分支提交的是md文件， 对于我们的case提交的直接是最终的html， 所以应该提交到master这个分支。&lt;/p&gt;</summary></entry><entry><title>实时策略</title><link href="/online%20learning.html" rel="alternate"></link><updated>2013-12-18T00:00:00+08:00</updated><author><name>haoyuan.huhy@gmail.com</name></author><id>tag:,2013-12-18:online learning.html</id><summary type="html">&lt;p&gt;传统的推荐以离线为主， 以预测用户偏好品牌为例，大致分为这几个步骤:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;离线采集计算用户， 品牌等各个维度的特征。&lt;/li&gt;
