@@ -2,9 +2,9 @@
 <html lang="ch">
 <head>
         <meta charset="utf-8" />
-        <title>one day - 技术</title>
+        <title>One Day - 技术</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
-        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="one day Atom Feed" />
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="One Day Atom Feed" />
 
         <!--[if IE]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -13,27 +13,182 @@
 
 <body id="index" class="home">
         <header id="banner" class="body">
-                <h1><a href="/">one day </a></h1>
+                <h1><a href="/">One Day </a></h1>
                 <nav><ul>
                     <li class="active"><a href="/category/ji-zhu.html">技术</a></li>
                     <li><a href="/category/ri-zhi.html">日志</a></li>
+                    <li><a href="/category/za-sui.html">杂碎</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/shi-shi-ce-lue.html">实时策略</a></h1>
+                    <h1 class="entry-title"><a href="/ji-qi-xue-xi-de-ye-lu-zi.html">机器学习的野路子</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2013-12-18T14:53:55">
-                Published: Wed 18 December 2013
+        <abbr class="published" title="2014-08-19T00:00:00">
+                 Tue 19 August 2014
         </abbr>
+        <p>haoyuan.huhy@gmail.com</p>
+<p> <a href="/category/ji-zhu.html">技术</a> </p>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/haoyuanhuhy.html">haoyuan.huhy</a>
-        </address>
-<p>In <a href="/category/ji-zhu.html">技术</a>. </p>
+</footer><!-- /.post-info --><h1>前言</h1>
+<p>机器学习很大程度上归为三个步骤：</p>
+<ol>
+<li>问题定义</li>
+<li>数据准备</li>
+<li>特征工程</li>
+</ol>
+<p>在漫漫长河中， 各路人士留下个各种民间智慧。</p>
+<h1>ABE：永远在融合</h1>
+<p>不管怎么样， ensembleing， 免费的午餐。</p>
+<h1>高置信度下才自动允许或者自动禁止</h1>
+<h1>Feature Hash</h1>
+<p>将高纬度的特征利用hash函数映射到低纬度的特征。</p>
+<h1>样本严重不均衡</h1>
+<p>将分类问题换成rank问题。</p>
+<h1>一坨坨的分类器</h1>
+<ul>
+<li>bad， good</li>
+<li>bad a， bad b</li>
+</ul>
+<h1>性能瓶颈</h1>
+<p>十有八九在特征提取</p>
+<h1>指标监控</h1>
+<ul>
+<li>准确率， 召回率</li>
+<li>输入的特征分布</li>
+<li>输出的得分分布</li>
+<li>输出的分类结果分布</li>
+<li>人工介入</li>
+</ul>
+<h1>专家智慧</h1>
+<p>有时候允许砖家来拍规则， 前提的确是砖家</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
 
-</footer><!-- /.post-info --><p>传统的推荐以离线为主， 以预测用户偏好品牌为例，大致分为这几个步骤:</p>
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/zao-yin-shu-ju-de-chu-li.html" rel="bookmark"
+                           title="Permalink to 噪音数据的处理">噪音数据的处理</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-08-19T00:00:00">
+                 Tue 19 August 2014
+        </abbr>
+        <p>haoyuan.huhy@gmail.com</p>
+<p> <a href="/category/ji-zhu.html">技术</a> </p>
+
+</footer><!-- /.post-info -->                <p>最近在追踪模型的时候， 发现了一系列比较严重的数据污染， 有些来自于采集过程， 有些则是spam， 顺手整理了一下噪音处理的相关tips。</p>
+<h1>大数据中的预处理</h1>
+<h1>步骤</h1>
+<ul>
+<li>数据清洗</li>
+<li>数据集成</li>
+<li>数据转换</li>
+<li>数据降维</li>
+</ul>
+<h1>WHY</h1>
+<ul>
+<li>大数据带来的问题是， 海量的脏数据<ul>
+<li>缺失：缺少某种类型的数据， 缺少部分样本的数据</li>
+<li>噪音：数据收集过程中导致的错误或者越界</li>
+<li>矛盾：数据之间互相矛盾</li>
+</ul>
+</li>
+<li>没有高质量的数据， 就没有高质量的数据挖掘结果<ul>
+<li>决策依赖于高质量的数据</li>
+<li>模型依赖于高质量的数据</li>
+</ul>
+</li>
+</ul>
+<h1>measure</h1>
+<ul>
+<li>准确度</li>
+<li>完整度</li>
+<li>一致性</li>
+<li>时间轴</li>
+<li>可信度</li>
+<li>附加值</li>
+<li>可解释性</li>
+<li>可获得性</li>
+</ul>
+<h1>main mission</h1>
+<ul>
+<li>数据清洗: 缺失值填充， 噪音平滑， 异常值处理</li>
+<li>数据集成: 多种来源数据集成</li>
+<li>数据转换: 标准化</li>
+<li>数据降维: 合并相似数据   </li>
+</ul>
+<h1>data clean</h1>
+<h3>数据清洗步骤</h3>
+<ul>
+<li>缺失值填充 ...</li></ul>
+                <a class="readmore" href="/zao-yin-shu-ju-de-chu-li.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/shi-yong-pelicanda-jian-bo-ke.html" rel="bookmark"
+                           title="Permalink to 使用pelican搭建博客">使用pelican搭建博客</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-08-18T00:00:00">
+                 Mon 18 August 2014
+        </abbr>
+        <p>haoyuan.huhy@gmail.com</p>
+<p> <a href="/category/ji-zhu.html">技术</a> </p>
+
+</footer><!-- /.post-info -->                <p>之前的博客用的是octopress， 挺好的， 也没啥毛病， 就是我不会ruby，出个小问题纠结大半天。</p>
+<p>因为最熟悉的语言是python，找了下有没有python的frame，发现还真有： pelican。</p>
+<p>这下子就简单了：</p>
+<ol>
+<li>pip install pelican</li>
+<li>pip install Markdown</li>
+<li>pelican-quickstart</li>
+</ol>
+<p>这些整完后就可以写blog了。</p>
+<p>很多人一上手就用了octopress， 反而弄混了，这里解释下：</p>
+<ul>
+<li>github pages, 在gh-pages下都是html文件。</li>
+<li>octopress、pelican、jeklly， 都是用来生成这些html的。</li>
+<li>理论上， 鉴于国内github的速度， 最好的办法是自己弄一台服务器，开一个最简单的http server。</li>
+</ul>
+<p>为了方便起见， 改写了MakeFile文件， 增加了对百度云的支持， 同时因为一部分文档是不适合泄露的，额外建立一个private的content和output的文件夹， 在MakeFile的html和serve那里增加了对这些的支持。</p>
+<p>申请了一台阿里云的服务器， 准备部署。</p>
+<h2>update</h2>
+<p>申请到阿里云的服务器了， 在服务器上用了个最简单的httpserver:</p>
+<div class="highlight"><pre><span class="n">nohup</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">SimpleHTTPServer</span> <span class="mi">80</span> <span class="o">&amp;</span>
+</pre></div>
+
+
+<p>在makefile里面配置rsync同步。</p>
+                <a class="readmore" href="/shi-yong-pelicanda-jian-bo-ke.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/online learning.html" rel="bookmark"
+                           title="Permalink to 实时策略">实时策略</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-12-18T00:00:00">
+                 Wed 18 December 2013
+        </abbr>
+        <p>haoyuan.huhy@gmail.com</p>
+<p> <a href="/category/ji-zhu.html">技术</a> </p>
+
+</footer><!-- /.post-info -->                <p>传统的推荐以离线为主， 以预测用户偏好品牌为例，大致分为这几个步骤:</p>
 <ul>
 <li>离线采集计算用户， 品牌等各个维度的特征。</li>
 <li>根据业务目标给出样本集合， 比如比较典型的CTR， 对于给定样本数据， 点击为正例， 不点击为负例。候选集的挑选有时候充满了trick， 尤其在业务的主体流量不是推荐的时候。</li>
@@ -53,56 +208,27 @@
 <li>做在线预测</li>
 </ol>
 <p>另一部分采用的是online learning, 利用用户不停的行为反馈（包含显式的和隐式的）， 来调整特征权重。</p>
-<p>现在在考虑一种在线增强学习的方式， 假定我们现在有四种投放策略：a, b, c, d。
-对于缺乏历史信息的新用户， 在没有任何信息的情况下， 我们先以轮播的方式在所有的位置投放a, b, c, d四种策略。
-随后我们采集相应的反馈信息：</p>
-<ul>
-<li>点击：显式正反馈</li>
-<li>删除： 显式负反馈</li>
-<li>未点击： 隐式负反馈</li>
-</ul>
-<p>在这一过程中快速积累用户对不同策略的敏感程度，同时对离线的预测结果进行纠正。</p>
-<p>由于单独位置对用户的曝光机会有限， 需要以打通的眼光看待所有的投放位置， 将他作为一个整体：</p>
-<ol>
-<li>收集到显式负反馈的策略在全局降分</li>
-<li>收集到显式负反馈的目标在全局过滤</li>
-</ol>
-<p>最轻量级的快速尝试方式是， 对于某部分用户而言， 预估的投放策略可信度已经低于热门了， 或者补全的时候采用相似算法的可信度已经低于热门了， 就可以通过快速切换策略达到在线选择的目的。</p>
-<p>对于实时而言， 不仅仅是算法上的变更， 对系统架构也有巨大的挑战。
-    下图是Netflix的实时推荐的架构图：
-"<img alt="Netflix架构" src="/images/online系统.jpg" />"</p>
-<p>系统上， Netflix分为online, near online, offline三个部分， nearline是用户最近的行为数据， 利用流失计算获得一些结果， 产生的结果送到online 用以更新模型。</p>                </article>
+<p>现在在考虑一种在线增强学习的方式， 假定我们现在有四种投放策略 ...</p>
+                <a class="readmore" href="/online learning.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
 <p class="paginator">
     Page 1 / 1
 </p>
-            </aside><!-- /#featured -->
+                </section><!-- /#content -->
         <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>blogroll</h2>
-                        <ul>
-                            <li><a href="http://getpelican.com/">Pelican</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
                 <div class="social">
                         <h2>social</h2>
                         <ul>
                             <li><a href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
 
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
                         </ul>
                 </div><!-- /.social -->
         </section><!-- /#extras -->
 
         <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
 
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
         </footer><!-- /#contentinfo -->
 
 </body>
