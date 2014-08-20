@@ -31,3 +31,5 @@ category:技术
 nohup python -m SimpleHTTPServer 80 &
 ```
 在makefile里面配置rsync同步。
+
+额， 最终有个坑， gh-pages分支提交的是md文件， 对于我们的case提交的直接是最终的html， 所以应该提交到master这个分支。
