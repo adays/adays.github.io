@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>One Day</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2014-08-19T00:00:00+08:00</updated><entry><title>机器学习的野路子</title><link href="/ji-qi-xue-xi-de-ye-lu-zi.html" rel="alternate"></link><updated>2014-08-19T00:00:00+08:00</updated><author><name>haoyuan.huhy@gmail.com</name></author><id>tag:,2014-08-19:ji-qi-xue-xi-de-ye-lu-zi.html</id><summary type="html">&lt;h1&gt;前言&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>One Day</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2014-08-20T00:00:00+08:00</updated><entry><title>萤火虫</title><link href="/ying-huo-chong.html" rel="alternate"></link><updated>2014-08-20T00:00:00+08:00</updated><author><name>haoyuan.huhy@gmail.com</name></author><id>tag:,2014-08-20:ying-huo-chong.html</id><summary type="html">&lt;p&gt;&lt;img alt="" src="/images/yinghuochong.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;看到萤火虫， 是很小很小的时候，那个时候晚上捉几只萤火虫， 放在麦秆里，就能当手电筒用。&lt;/p&gt;
+&lt;p&gt;以前曾经有那么一条路， 走进去的时候才发现， 林荫间飞舞着萤火虫， 那一瞬间， 跟梦一样。&lt;/p&gt;
+&lt;p&gt;今天去了雨中的湿地散心， 前几天跟一个妹子打趣：这天看萤火虫， 全淹死了吧。&lt;/p&gt;
+&lt;p&gt;然后我真的看见了萤火虫， 虽然只有那么微弱的光芒。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;对这初升的日头，得抱着虔敬的心......便是像今天这样灰暗愁闷的日子，你也得爱......现在是冬天，一切都睡着了。将来大地会醒过来的。如果你是好人，一切都会顺当的。干吗要为做不到的事悲伤呢？一个人应当做他能做的事......竭尽所能.......英雄就是竭力做好他所做的事，而平常人就是做不到这一点。 -- 《约翰·克里斯朵夫》&lt;/p&gt;
+&lt;/blockquote&gt;</summary></entry><entry><title>机器学习的野路子</title><link href="/ji-qi-xue-xi-de-ye-lu-zi.html" rel="alternate"></link><updated>2014-08-19T00:00:00+08:00</updated><author><name>haoyuan.huhy@gmail.com</name></author><id>tag:,2014-08-19:ji-qi-xue-xi-de-ye-lu-zi.html</id><summary type="html">&lt;h1&gt;前言&lt;/h1&gt;
 &lt;p&gt;机器学习很大程度上归为三个步骤：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;问题定义&lt;/li&gt;

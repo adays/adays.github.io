@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>One Day</title><link>/</link><description></description><atom:link href="/feeds/haoyuanhuhygmailcom.rss.xml" rel="self"></atom:link><lastBuildDate>Tue, 19 Aug 2014 00:00:00 +0800</lastBuildDate><item><title>机器学习的野路子</title><link>/ji-qi-xue-xi-de-ye-lu-zi.html</link><description>&lt;h1&gt;前言&lt;/h1&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>One Day</title><link>/</link><description></description><atom:link href="/feeds/haoyuanhuhygmailcom.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 20 Aug 2014 00:00:00 +0800</lastBuildDate><item><title>萤火虫</title><link>/ying-huo-chong.html</link><description>&lt;p&gt;&lt;img alt="" src="/images/yinghuochong.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;看到萤火虫， 是很小很小的时候，那个时候晚上捉几只萤火虫， 放在麦秆里，就能当手电筒用。&lt;/p&gt;
+&lt;p&gt;以前曾经有那么一条路， 走进去的时候才发现， 林荫间飞舞着萤火虫， 那一瞬间， 跟梦一样。&lt;/p&gt;
+&lt;p&gt;今天去了雨中的湿地散心， 前几天跟一个妹子打趣：这天看萤火虫， 全淹死了吧。&lt;/p&gt;
+&lt;p&gt;然后我真的看见了萤火虫， 虽然只有那么微弱的光芒。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;对这初升的日头，得抱着虔敬的心......便是像今天这样灰暗愁闷的日子，你也得爱......现在是冬天，一切都睡着了。将来大地会醒过来的。如果你是好人，一切都会顺当的。干吗要为做不到的事悲伤呢？一个人应当做他能做的事......竭尽所能.......英雄就是竭力做好他所做的事，而平常人就是做不到这一点。 -- 《约翰·克里斯朵夫》&lt;/p&gt;
+&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">haoyuan.huhy@gmail.com</dc:creator><pubDate>Wed, 20 Aug 2014 00:00:00 +0800</pubDate><guid>tag:,2014-08-20:ying-huo-chong.html</guid></item><item><title>机器学习的野路子</title><link>/ji-qi-xue-xi-de-ye-lu-zi.html</link><description>&lt;h1&gt;前言&lt;/h1&gt;
 &lt;p&gt;机器学习很大程度上归为三个步骤：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;问题定义&lt;/li&gt;
