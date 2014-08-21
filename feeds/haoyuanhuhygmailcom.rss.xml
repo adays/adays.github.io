@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>One Day</title><link>/</link><description></description><atom:link href="/feeds/haoyuanhuhygmailcom.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 20 Aug 2014 00:00:00 +0800</lastBuildDate><item><title>萤火虫</title><link>/ying-huo-chong.html</link><description>&lt;p&gt;&lt;img alt="" src="/images/yinghuochong.jpg" /&gt;&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>One Day</title><link>/</link><description></description><atom:link href="/feeds/haoyuanhuhygmailcom.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 21 Aug 2014 00:00:00 +0800</lastBuildDate><item><title>婚礼路线图</title><link>/hun-li-lu-xian-tu.html</link><description>&lt;p&gt;感谢兄弟们参加我的婚礼， 这是我整理的几个交通图。&lt;/p&gt;
+&lt;h3&gt;路线&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;杭州萧山机场 - 义乌 ：推荐机场大巴至宾王客运站下车&lt;/li&gt;
+&lt;li&gt;杭州 - 义乌 ：推荐动车直达&lt;/li&gt;
+&lt;li&gt;义乌 - 酒店 ： 804至宾王客运站下车, 义乌是个小城市， 全程大约半小时&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;婚礼的酒店就在大家要下榻的酒店对面， 从宾王客运站到酒店路线如下, 大约300米：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://orange-tree.oss-cn-hangzhou.aliyuncs.com/blog-images/luxian.jpg" style=" height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;my phone:18858185585&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">haoyuan.huhy@gmail.com</dc:creator><pubDate>Thu, 21 Aug 2014 00:00:00 +0800</pubDate><guid>tag:,2014-08-21:hun-li-lu-xian-tu.html</guid></item><item><title>萤火虫</title><link>/ying-huo-chong.html</link><description>&lt;p&gt;&lt;img alt="" src="http://orange-tree.oss-cn-hangzhou.aliyuncs.com/blog-images/yinghuochong.jpg" style=" height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;p&gt;看到萤火虫， 是很小很小的时候，那个时候晚上捉几只萤火虫， 放在麦秆里，就能当手电筒用。&lt;/p&gt;
 &lt;p&gt;以前曾经有那么一条路， 走进去的时候才发现， 林荫间飞舞着萤火虫， 那一瞬间， 跟梦一样。&lt;/p&gt;
-&lt;p&gt;今天去了雨中的湿地散心， 前几天跟一个妹子打趣：这天看萤火虫， 全淹死了吧。&lt;/p&gt;
+&lt;p&gt;今天去了雨中的湿地散心， 前几天打趣：这天看萤火虫， 全淹死了吧。&lt;/p&gt;
 &lt;p&gt;然后我真的看见了萤火虫， 虽然只有那么微弱的光芒。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;对这初升的日头，得抱着虔敬的心......便是像今天这样灰暗愁闷的日子，你也得爱......现在是冬天，一切都睡着了。将来大地会醒过来的。如果你是好人，一切都会顺当的。干吗要为做不到的事悲伤呢？一个人应当做他能做的事......竭尽所能.......英雄就是竭力做好他所做的事，而平常人就是做不到这一点。 -- 《约翰·克里斯朵夫》&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;对这初升的日头，得抱着虔敬的心......便是像今天这样灰暗愁闷的日子，你也得爱......现在是冬天，一切都睡着了。将来大地会醒过来的。
+                                                                    -- 《约翰·克里斯朵夫》&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">haoyuan.huhy@gmail.com</dc:creator><pubDate>Wed, 20 Aug 2014 00:00:00 +0800</pubDate><guid>tag:,2014-08-20:ying-huo-chong.html</guid></item><item><title>机器学习的野路子</title><link>/ji-qi-xue-xi-de-ye-lu-zi.html</link><description>&lt;h1&gt;前言&lt;/h1&gt;
 &lt;p&gt;机器学习很大程度上归为三个步骤：&lt;/p&gt;
 &lt;ol&gt;
@@ -123,7 +137,7 @@
 &lt;p&gt;这些整完后就可以写blog了。&lt;/p&gt;
 &lt;p&gt;很多人一上手就用了octopress， 反而弄混了，这里解释下：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;github pages, 在gh-pages下都是html文件。&lt;/li&gt;
+&lt;li&gt;&lt;s&gt;github pages, 在gh-pages下都是html文件。&lt;/s&gt;&lt;/li&gt;
 &lt;li&gt;octopress、pelican、jeklly， 都是用来生成这些html的。&lt;/li&gt;
 &lt;li&gt;理论上， 鉴于国内github的速度， 最好的办法是自己弄一台服务器，开一个最简单的http server。&lt;/li&gt;
 &lt;/ul&gt;
@@ -133,11 +147,13 @@
 &lt;p&gt;申请到阿里云的服务器了， 在服务器上用了个最简单的httpserver:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;nohup&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="n"&gt;SimpleHTTPServer&lt;/span&gt; &lt;span class="mi"&gt;80&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-
-
 &lt;p&gt;在makefile里面配置rsync同步。
 大家可以访问这个地址&lt;a href="http://www.juzishanshu.com"&gt;橘子杉树&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;额， 最终有个坑， gh-pages分支提交的是md文件， 对于我们的case提交的直接是最终的html， 所以应该提交到master这个分支。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">haoyuan.huhy@gmail.com</dc:creator><pubDate>Mon, 18 Aug 2014 00:00:00 +0800</pubDate><guid>tag:,2014-08-18:shi-yong-pelicanda-jian-bo-ke.html</guid></item><item><title>帮张侃找女朋友</title><link>/bang-zhang-kan-zhao-nu-peng-you.html</link><description>&lt;p&gt;动车是杭州开往上海的， 我们的厂工张侃同学在西厂干活， 排除为了爱情现身的情况， 一周内有五天时间滞留杭州晚上可以出发邂逅。&lt;/p&gt;
+&lt;p&gt;额， 最终有个坑， gh-pages分支提交的是md文件， 对于我们的case提交的直接是最终的html， 所以应该提交到master这个分支。&lt;/p&gt;
+&lt;h3&gt;update&lt;/h3&gt;
+&lt;p&gt;今天让多个人访问的时候服务器就顶不住了， 主要原因是木器啊那图片是直接放web server上的。&lt;/p&gt;
+&lt;p&gt;pelican原生对图片支持不太好， 它的插件库里面有一个better_figures_and_images，能够展示更优美的图片， 但是只支持本地图片， 我修改了这个插件&lt;a href="https://github.com/getpelican/pelican-plugins/tree/master/better_figures_and_images"&gt;github地址&lt;/a&gt;, 需要的直接clone我的插件库就好， 相关修改已经提交pelican。&lt;/p&gt;
+&lt;p&gt;申请了阿里云的oss， 简直是业界良心， 便宜好用耐操。 &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">haoyuan.huhy@gmail.com</dc:creator><pubDate>Mon, 18 Aug 2014 00:00:00 +0800</pubDate><guid>tag:,2014-08-18:shi-yong-pelicanda-jian-bo-ke.html</guid></item><item><title>帮张侃找女朋友</title><link>/bang-zhang-kan-zhao-nu-peng-you.html</link><description>&lt;p&gt;动车是杭州开往上海的， 我们的厂工张侃同学在西厂干活， 排除为了爱情现身的情况， 一周内有五天时间滞留杭州晚上可以出发邂逅。&lt;/p&gt;
 &lt;p&gt;妹子的情况比较复杂， 一种可能是暂时来杭州旅游， 常驻上海； 一种是去上海旅游， 常驻杭州； 一种是和我们的厂工相似， 周末往上海跑。但是从妹子在车上的表现分析：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;如果是常坐动车的应该对温度情况有充分的了解， 不会出现衣服不够导致冻着。&lt;/li&gt;
@@ -234,7 +250,7 @@
 &lt;p&gt;最轻量级的快速尝试方式是， 对于某部分用户而言， 预估的投放策略可信度已经低于热门了， 或者补全的时候采用相似算法的可信度已经低于热门了， 就可以通过快速切换策略达到在线选择的目的。&lt;/p&gt;
 &lt;p&gt;对于实时而言， 不仅仅是算法上的变更， 对系统架构也有巨大的挑战。
     下图是Netflix的实时推荐的架构图：
-"&lt;img alt="Netflix架构" src="/images/online系统.jpg" /&gt;"&lt;/p&gt;
+"&lt;img alt="Netflix架构" src="http://orange-tree.oss-cn-hangzhou.aliyuncs.com/blog-images/online系统.jpg" style=" height: auto; max-width: 100%;"/&gt;"&lt;/p&gt;
 &lt;p&gt;系统上， Netflix分为online, near online, offline三个部分， nearline是用户最近的行为数据， 利用流失计算获得一些结果， 产生的结果送到online 用以更新模型。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">haoyuan.huhy@gmail.com</dc:creator><pubDate>Wed, 18 Dec 2013 00:00:00 +0800</pubDate><guid>tag:,2013-12-18:online learning.html</guid></item><item><title>Hello Girls</title><link>/hello-girls.html</link><description>&lt;h1&gt;hello girls&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;sexy&lt;/li&gt;

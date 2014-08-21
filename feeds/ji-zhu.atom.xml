@@ -116,7 +116,7 @@
 &lt;p&gt;这些整完后就可以写blog了。&lt;/p&gt;
 &lt;p&gt;很多人一上手就用了octopress， 反而弄混了，这里解释下：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;github pages, 在gh-pages下都是html文件。&lt;/li&gt;
+&lt;li&gt;&lt;s&gt;github pages, 在gh-pages下都是html文件。&lt;/s&gt;&lt;/li&gt;
 &lt;li&gt;octopress、pelican、jeklly， 都是用来生成这些html的。&lt;/li&gt;
 &lt;li&gt;理论上， 鉴于国内github的速度， 最好的办法是自己弄一台服务器，开一个最简单的http server。&lt;/li&gt;
 &lt;/ul&gt;
@@ -126,11 +126,13 @@
 &lt;p&gt;申请到阿里云的服务器了， 在服务器上用了个最简单的httpserver:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;nohup&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="n"&gt;SimpleHTTPServer&lt;/span&gt; &lt;span class="mi"&gt;80&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-
-
 &lt;p&gt;在makefile里面配置rsync同步。
 大家可以访问这个地址&lt;a href="http://www.juzishanshu.com"&gt;橘子杉树&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;额， 最终有个坑， gh-pages分支提交的是md文件， 对于我们的case提交的直接是最终的html， 所以应该提交到master这个分支。&lt;/p&gt;</summary></entry><entry><title>实时策略</title><link href="/online%20learning.html" rel="alternate"></link><updated>2013-12-18T00:00:00+08:00</updated><author><name>haoyuan.huhy@gmail.com</name></author><id>tag:,2013-12-18:online learning.html</id><summary type="html">&lt;p&gt;传统的推荐以离线为主， 以预测用户偏好品牌为例，大致分为这几个步骤:&lt;/p&gt;
+&lt;p&gt;额， 最终有个坑， gh-pages分支提交的是md文件， 对于我们的case提交的直接是最终的html， 所以应该提交到master这个分支。&lt;/p&gt;
+&lt;h3&gt;update&lt;/h3&gt;
+&lt;p&gt;今天让多个人访问的时候服务器就顶不住了， 主要原因是木器啊那图片是直接放web server上的。&lt;/p&gt;
+&lt;p&gt;pelican原生对图片支持不太好， 它的插件库里面有一个better_figures_and_images，能够展示更优美的图片， 但是只支持本地图片， 我修改了这个插件&lt;a href="https://github.com/getpelican/pelican-plugins/tree/master/better_figures_and_images"&gt;github地址&lt;/a&gt;, 需要的直接clone我的插件库就好， 相关修改已经提交pelican。&lt;/p&gt;
+&lt;p&gt;申请了阿里云的oss， 简直是业界良心， 便宜好用耐操。 &lt;/p&gt;</summary></entry><entry><title>实时策略</title><link href="/online%20learning.html" rel="alternate"></link><updated>2013-12-18T00:00:00+08:00</updated><author><name>haoyuan.huhy@gmail.com</name></author><id>tag:,2013-12-18:online learning.html</id><summary type="html">&lt;p&gt;传统的推荐以离线为主， 以预测用户偏好品牌为例，大致分为这几个步骤:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;离线采集计算用户， 品牌等各个维度的特征。&lt;/li&gt;
 &lt;li&gt;根据业务目标给出样本集合， 比如比较典型的CTR， 对于给定样本数据， 点击为正例， 不点击为负例。候选集的挑选有时候充满了trick， 尤其在业务的主体流量不是推荐的时候。&lt;/li&gt;
@@ -167,5 +169,5 @@
 &lt;p&gt;最轻量级的快速尝试方式是， 对于某部分用户而言， 预估的投放策略可信度已经低于热门了， 或者补全的时候采用相似算法的可信度已经低于热门了， 就可以通过快速切换策略达到在线选择的目的。&lt;/p&gt;
 &lt;p&gt;对于实时而言， 不仅仅是算法上的变更， 对系统架构也有巨大的挑战。
     下图是Netflix的实时推荐的架构图：
-"&lt;img alt="Netflix架构" src="/images/online系统.jpg" /&gt;"&lt;/p&gt;
+"&lt;img alt="Netflix架构" src="http://orange-tree.oss-cn-hangzhou.aliyuncs.com/blog-images/online系统.jpg" style=" height: auto; max-width: 100%;"/&gt;"&lt;/p&gt;
 &lt;p&gt;系统上， Netflix分为online, near online, offline三个部分， nearline是用户最近的行为数据， 利用流失计算获得一些结果， 产生的结果送到online 用以更新模型。&lt;/p&gt;</summary></entry></feed>

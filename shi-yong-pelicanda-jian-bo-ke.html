@@ -47,7 +47,7 @@
 <p>这些整完后就可以写blog了。</p>
 <p>很多人一上手就用了octopress， 反而弄混了，这里解释下：</p>
 <ul>
-<li>github pages, 在gh-pages下都是html文件。</li>
+<li><s>github pages, 在gh-pages下都是html文件。</s></li>
 <li>octopress、pelican、jeklly， 都是用来生成这些html的。</li>
 <li>理论上， 鉴于国内github的速度， 最好的办法是自己弄一台服务器，开一个最简单的http server。</li>
 </ul>
@@ -57,11 +57,13 @@
 <p>申请到阿里云的服务器了， 在服务器上用了个最简单的httpserver:</p>
 <div class="highlight"><pre><span class="n">nohup</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">SimpleHTTPServer</span> <span class="mi">80</span> <span class="o">&amp;</span>
 </pre></div>
-
-
 <p>在makefile里面配置rsync同步。
 大家可以访问这个地址<a href="http://www.juzishanshu.com">橘子杉树</a></p>
 <p>额， 最终有个坑， gh-pages分支提交的是md文件， 对于我们的case提交的直接是最终的html， 所以应该提交到master这个分支。</p>
+<h3>update</h3>
+<p>今天让多个人访问的时候服务器就顶不住了， 主要原因是木器啊那图片是直接放web server上的。</p>
+<p>pelican原生对图片支持不太好， 它的插件库里面有一个better_figures_and_images，能够展示更优美的图片， 但是只支持本地图片， 我修改了这个插件<a href="https://github.com/getpelican/pelican-plugins/tree/master/better_figures_and_images">github地址</a>, 需要的直接clone我的插件库就好， 相关修改已经提交pelican。</p>
+<p>申请了阿里云的oss， 简直是业界良心， 便宜好用耐操。 </p>
     </div><!-- /.entry-content -->
 
   </article>
