@@ -132,7 +132,9 @@
 &lt;h3&gt;update&lt;/h3&gt;
 &lt;p&gt;今天让多个人访问的时候服务器就顶不住了， 主要原因是木器啊那图片是直接放web server上的。&lt;/p&gt;
 &lt;p&gt;pelican原生对图片支持不太好， 它的插件库里面有一个better_figures_and_images，能够展示更优美的图片， 但是只支持本地图片， 我修改了这个插件&lt;a href="https://github.com/getpelican/pelican-plugins/tree/master/better_figures_and_images"&gt;github地址&lt;/a&gt;, 需要的直接clone我的插件库就好， 相关修改已经提交pelican。&lt;/p&gt;
-&lt;p&gt;申请了阿里云的oss， 简直是业界良心， 便宜好用耐操。 &lt;/p&gt;</summary></entry><entry><title>实时策略</title><link href="/online%20learning.html" rel="alternate"></link><updated>2013-12-18T00:00:00+08:00</updated><author><name>haoyuan.huhy@gmail.com</name></author><id>tag:,2013-12-18:online learning.html</id><summary type="html">&lt;p&gt;传统的推荐以离线为主， 以预测用户偏好品牌为例，大致分为这几个步骤:&lt;/p&gt;
+&lt;p&gt;申请了阿里云的oss， 简直是业界良心， 便宜好用耐操。 &lt;/p&gt;
+&lt;h3&gt;update 2014 08 24&lt;/h3&gt;
+&lt;p&gt;服务器换了nginx， 配置很简单， 修改下user， 修改下root之类的就好了。&lt;/p&gt;</summary></entry><entry><title>实时策略</title><link href="/online%20learning.html" rel="alternate"></link><updated>2013-12-18T00:00:00+08:00</updated><author><name>haoyuan.huhy@gmail.com</name></author><id>tag:,2013-12-18:online learning.html</id><summary type="html">&lt;p&gt;传统的推荐以离线为主， 以预测用户偏好品牌为例，大致分为这几个步骤:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;离线采集计算用户， 品牌等各个维度的特征。&lt;/li&gt;
 &lt;li&gt;根据业务目标给出样本集合， 比如比较典型的CTR， 对于给定样本数据， 点击为正例， 不点击为负例。候选集的挑选有时候充满了trick， 尤其在业务的主体流量不是推荐的时候。&lt;/li&gt;

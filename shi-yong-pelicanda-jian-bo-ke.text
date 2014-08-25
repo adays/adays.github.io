@@ -41,3 +41,6 @@ nohup python -m SimpleHTTPServer 80 &
 pelican原生对图片支持不太好， 它的插件库里面有一个better_figures_and_images，能够展示更优美的图片， 但是只支持本地图片， 我修改了这个插件[github地址](https://github.com/getpelican/pelican-plugins/tree/master/better_figures_and_images), 需要的直接clone我的插件库就好， 相关修改已经提交pelican。
 
 申请了阿里云的oss， 简直是业界良心， 便宜好用耐操。 
+
+### update 2014 08 24
+服务器换了nginx， 配置很简单， 修改下user， 修改下root之类的就好了。
