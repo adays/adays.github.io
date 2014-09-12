@@ -1,7 +1,6 @@
-Title: 实时策略
-Date: 2013-12-18 
-Category: 技术
-slug: online learning
+title: 实时策略
+date: 2013-12-18 
+category:技术
 
 
 传统的推荐以离线为主， 以预测用户偏好品牌为例，大致分为这几个步骤:

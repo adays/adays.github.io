@@ -1,5 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>One Day</title><link href="/" rel="alternate"></link><link href="/feeds/haoyuanhuhygmailcom.atom.xml" rel="self"></link><id>/</id><updated>2014-08-25T00:00:00+08:00</updated><entry><title>在庐山的时光</title><link href="/zai-lu-shan-de-shi-guang.html" rel="alternate"></link><updated>2014-08-25T00:00:00+08:00</updated><author><name>haoyuan.huhy@gmail.com</name></author><id>tag:,2014-08-25:zai-lu-shan-de-shi-guang.html</id><summary type="html">&lt;p&gt;在庐山的几天， 吃喝玩乐，遇到了一些很可爱的朋友。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>One Day</title><link href="/" rel="alternate"></link><link href="/feeds/haoyuanhuhygmailcom.atom.xml" rel="self"></link><id>/</id><updated>2014-09-12T00:00:00+08:00</updated><entry><title>learning to rank</title><link href="/learning-to-rank.html" rel="alternate"></link><updated>2014-09-12T00:00:00+08:00</updated><author><name>haoyuan.huhy@gmail.com</name></author><id>tag:,2014-09-12:learning-to-rank.html</id><summary type="html">&lt;h1&gt;历史阶段&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Optimizing search engines using clickthrough data, T Joachims, KDD 02——ranksvm的提出。&lt;/li&gt;
+&lt;li&gt;Efficient algorithms for ranking with SVMs, O Chapelle——提出primal SVM提升效率。&lt;/li&gt;
+&lt;li&gt;Person Re-Identification by Support Vector Ranking, BMVC2010——提出Ensemble RankSVM解决memory consumption问题。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1&gt;svm算法描述&lt;/h1&gt;
+&lt;p&gt;svm求解的目标是能够正确划分数据集并且几何间隔最大的分离超平面， 与感知机的求解误分类最小的策略有所不同。我们这里仅以线性svm为例进行介绍。&lt;/p&gt;
+&lt;p&gt;对于超平面(w, b), 样本点$(x_i, y_i)$, 几何间隔定义为：&lt;/p&gt;
+&lt;p&gt;$\gamma_i = y_i (\frac{w}{||w||} \cdot x_i + \frac{b}{||w||})$&lt;/p&gt;
+&lt;p&gt;超平面(w, b)对于训练数据集T的几何间隔定义为：&lt;/p&gt;
+&lt;p&gt;$\gamma = min(\gamma_i)$&lt;/p&gt;
+&lt;p&gt;几何间隔最大化直观的解释是，以充分大的确信度对训练数据进行分类， 也就是说， 不仅能将正负实例点分开， 而且对最难分的实例点（离超平面最近的点）也有足够大的确定度将它们分开， 这样的超平面对未知的新实例有很好的分类与猜测能力。 
+具体的， 这个问题可以表述为：
+$max \ \gamma$&lt;/p&gt;
+&lt;p&gt;$s.t. y_i (\frac{w}{||w||} \cdot x_i + \frac{b}{||w||}) \ge \gamma$&lt;/p&gt;
+&lt;p&gt;经过变化后， 问题等价位求如下的最优化问题：&lt;/p&gt;
+&lt;p&gt;$min \frac {1}{2}||w||^2$&lt;/p&gt;
+&lt;p&gt;$s.t.    y_i(w \cdot xi + b) - 1 \ge 0$&lt;/p&gt;
+&lt;p&gt;现实中的问题很少能完全做到线性可分， 必然存在一些奇异点的干扰， 我们对每个样本点引进一个松弛变量$\xi$, 相应的， 问题等价为：
+$min \frac{1}{2}||w||^2 + C\sum{\xi}$&lt;/p&gt;
+&lt;p&gt;$s.t.    y_i(w \cdot xi + b)  \ge 1 - \xi$&lt;/p&gt;
+&lt;h1&gt;ranksvm算法描述&lt;/h1&gt;
+&lt;p&gt;如上所述，在svm中是要找到分类超平面使正负例的几何间隔最大化，在ranking问题中不存在绝对的正负例，而是要使得正确匹配的得分$x_{s}^{+}$大于错误匹配的得分$x_{s}^{-}$，即
+$(x_{s}^{+}-x_{s}^{-})&amp;gt;0$,并且使得$(x_{s}^{+}-x_{s}^{-})$最大化。&lt;/p&gt;
+&lt;p&gt;定义查询样本x对于样本xi匹配的得分$x_{s}:  x_{s}=w^{T}|x-x_{i}| $; $|x-x_{i}|$表示每一维特征都对应相减，得到差值向量，预测阶段基于差值做出预测和排序。&lt;/p&gt;
+&lt;h1&gt;训练过程&lt;/h1&gt;
+&lt;p&gt;为了获得$w^{T}$，我们定义：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;训练集$X={（xi，yi）}，i=1,2，……m；$&lt;/li&gt;
+&lt;li&gt;$xi$为特征向量&lt;/li&gt;
+&lt;li&gt;yi为+1或者-1&lt;/li&gt;
+&lt;li&gt;对于每一个训练样本xi，X中与xi匹配的正例样本构成集合$d_{i}^{+} = \lbrace x_{i,1}^{+},x_{i,2}^{+}...x_{i,m^{+}}^{+}  \rbrace$&lt;/li&gt;
+&lt;li&gt;X中与xi匹不配的负例样本构成集合$d_{i}^{-}= \lbrace x_{i,1}^{-},x_{i,2}^{-}...x_{i,m}^{-}  \rbrace；m^{+},m^{-}$分别为正负样本数量，存在关系$m^{+}+m^{-}=m$。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;归纳起来，就是对训练样本集中每个样本xi，都存在若干正负例的score pairwise，把训练集中所有score pairwise的集合用P表示，即$P={（x_{s}^{+},x_{s}^{-}）}$,作为训练阶段的输入;&lt;/p&gt;
+&lt;p&gt;综合之前讲述的svm最优化表述，RankSVM就可得到如下形式：
+$ MAX w^{T}(x_{s}^{+}-x_{s}^{-});  $&lt;/p&gt;
+&lt;p&gt;$s.t. w^{T}(x_{s}^{+}-x_{s}^{-})&amp;gt;0$&lt;/p&gt;
+&lt;p&gt;即：
+$ min \frac{1}{2}||w||^{2}+C\sum\xi _{s} $&lt;/p&gt;
+&lt;p&gt;$ s.t. w^{T}(x_{s}^{+}-x_{s}^{-})\geq 1-\xi _{s}。 $&lt;/p&gt;
+&lt;p&gt;以上就是RankSVM的基本思想，ranksvm目前广泛用于pair wise的训练方式。&lt;/p&gt;
+&lt;h1&gt;优化&lt;/h1&gt;
+&lt;p&gt;在实际应用中， postive和negative的数量都比较巨大的情况下， ranksvm几乎不可用， 按照工业界以能够处理所有的数据优先于设计精巧的模型原则， 我们修改了ranksvm的loss，使得他做到线性的复杂度。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;PairWise Loss:
+$ L_{rank} (f;S) = \frac {1} {mn} \sum_{j=1}^{m}\sum_{i=1}^{n} 1{\hskip -2.5 pt}\hbox{I}(f(x_i)^+ \le (f(x_j^-)) $&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Down Sampling PairWise Loss:
+$ L_{rank} (f;S) = \frac {1} {n} \sum_{i=1}^{n} 1{\hskip -2.5 pt}\hbox{I}(f(x_i)^+ \le rand(f(x^-)) $&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;通过这种方式， 能将复杂度从 $ 2 \cdot n \cdot m  $ 下降到 $2 \cdot n$。
+同时在实践中表明， 由于能够处理的数据样本数目和维度大大提升， down sampling的方式表现优于标准的ranksvm。&lt;/p&gt;
+&lt;h1&gt;tips&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;L1范数:  ||x|| 为x向量各个元素绝对值之和。公式：$|X|=\sum{|x_i|}$&lt;/li&gt;
+&lt;li&gt;L2范数:  ||x||为x向量各个元素平方和的1/2次方，L2范数又称Euclidean范数或者Frobenius范数。公式：$||X||=\sqrt{\sum{x_i^2}})$&lt;/li&gt;
+&lt;li&gt;几何间隔：&lt;/li&gt;
+&lt;li&gt;样本点几何间隔：超平面(w, b)和样本点(xi, yi)的距离$|w \cdot x_i + b|$表示分类预测的确信程度， 而$w \cdot x_i + b$符号是否一致表示了分类是否正确， 做归一化之后表示为：$\gamma_i = y_i (\frac{w}{||w||} \cdot x_i + \frac{b}{||w||})$&lt;/li&gt;
+&lt;li&gt;平面几何间隔： 超平面(w, b)关于训练数据集T的几何间隔定义为： $\gamma = min(\gamma_i)$&lt;/li&gt;
+&lt;li&gt;支持向量：样本点中与超平面距离最近的点。&lt;/li&gt;
+&lt;/ul&gt;&lt;script type= "text/javascript"&gt;
+    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+        var mathjaxscript = document.createElement('script');
+        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+        mathjaxscript.type = 'text/javascript';
+        mathjaxscript.src = 'https:' == document.location.protocol
+                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" +
+            "    config: ['MMLorHTML.js']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    displayAlign: 'center'," +
+            "    displayIndent: '0em'," +
+            "    showMathMenu: true," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['$','$'] ], " +
+            "        displayMath: [ ['$$','$$'] ]," +
+            "        processEscapes: true," +
+            "        preview: 'TeX'," +
+            "    }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+    }
+&lt;/script&gt;
+</summary></entry><entry><title>在庐山的时光</title><link href="/zai-lu-shan-de-shi-guang.html" rel="alternate"></link><updated>2014-08-25T00:00:00+08:00</updated><author><name>haoyuan.huhy@gmail.com</name></author><id>tag:,2014-08-25:zai-lu-shan-de-shi-guang.html</id><summary type="html">&lt;p&gt;照片还真是难忘啊。
+在庐山的几天， 吃喝玩乐，遇到了一些很可爱的朋友。&lt;/p&gt;
 &lt;h3&gt;一群疯狂的人类&lt;/h3&gt;
 &lt;p&gt;&lt;img alt="一群疯狂地人类" src="http://orange-tree.oss-cn-hangzhou.aliyuncs.com/blog-images/IMG_0615.jpg" style=" height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;h3&gt;两个傻哈哈&lt;/h3&gt;
@@ -26,18 +122,7 @@
 &lt;img alt="" src="http://orange-tree.oss-cn-hangzhou.aliyuncs.com/blog-images/PA070068.jpg" style=" height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;h3&gt;云水驿&lt;/h3&gt;
 &lt;p&gt;回来和同学去了云水驿吃饭， 驻场的两个妹子唱的还不错。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="http://orange-tree.oss-cn-hangzhou.aliyuncs.com/blog-images/PA070072.jpg" style=" height: auto; max-width: 100%;"/&gt;&lt;/p&gt;</summary></entry><entry><title>婚礼路线图</title><link href="/hun-li-lu-xian-tu.html" rel="alternate"></link><updated>2014-08-21T00:00:00+08:00</updated><author><name>haoyuan.huhy@gmail.com</name></author><id>tag:,2014-08-21:hun-li-lu-xian-tu.html</id><summary type="html">&lt;p&gt;感谢兄弟们参加我的婚礼， 这是我整理的几个交通图。&lt;/p&gt;
-&lt;h3&gt;路线&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;杭州萧山机场 - 义乌 ：推荐机场大巴至宾王客运站下车&lt;/li&gt;
-&lt;li&gt;杭州 - 义乌 ：推荐动车直达&lt;/li&gt;
-&lt;li&gt;义乌 - 酒店 ： 804至宾王客运站下车, 义乌是个小城市， 全程大约半小时&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;婚礼的酒店就在大家要下榻的酒店对面， 从宾王客运站到酒店路线如下, 大约300米：&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="http://orange-tree.oss-cn-hangzhou.aliyuncs.com/blog-images/luxian.jpg" style=" height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;my phone:18858185585&lt;/li&gt;
-&lt;/ul&gt;</summary></entry><entry><title>萤火虫</title><link href="/ying-huo-chong.html" rel="alternate"></link><updated>2014-08-20T00:00:00+08:00</updated><author><name>haoyuan.huhy@gmail.com</name></author><id>tag:,2014-08-20:ying-huo-chong.html</id><summary type="html">&lt;p&gt;&lt;img alt="" src="http://orange-tree.oss-cn-hangzhou.aliyuncs.com/blog-images/yinghuochong.jpg" style=" height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://orange-tree.oss-cn-hangzhou.aliyuncs.com/blog-images/PA070072.jpg" style=" height: auto; max-width: 100%;"/&gt;&lt;/p&gt;</summary></entry><entry><title>萤火虫</title><link href="/ying-huo-chong.html" rel="alternate"></link><updated>2014-08-20T00:00:00+08:00</updated><author><name>haoyuan.huhy@gmail.com</name></author><id>tag:,2014-08-20:ying-huo-chong.html</id><summary type="html">&lt;p&gt;&lt;img alt="" src="http://orange-tree.oss-cn-hangzhou.aliyuncs.com/blog-images/yinghuochong.jpg" style=" height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;p&gt;看到萤火虫， 是很小很小的时候，那个时候晚上捉几只萤火虫， 放在麦秆里，就能当手电筒用。&lt;/p&gt;
 &lt;p&gt;以前曾经有那么一条路， 走进去的时候才发现， 林荫间飞舞着萤火虫， 那一瞬间， 跟梦一样。&lt;/p&gt;
 &lt;p&gt;今天去了雨中的湿地散心， 前几天打趣：这天看萤火虫， 全淹死了吧。&lt;/p&gt;
@@ -242,7 +327,7 @@
         (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
     }
 &lt;/script&gt;
-</summary></entry><entry><title>实时策略</title><link href="/online%20learning.html" rel="alternate"></link><updated>2013-12-18T00:00:00+08:00</updated><author><name>haoyuan.huhy@gmail.com</name></author><id>tag:,2013-12-18:online learning.html</id><summary type="html">&lt;p&gt;传统的推荐以离线为主， 以预测用户偏好品牌为例，大致分为这几个步骤:&lt;/p&gt;
+</summary></entry><entry><title>实时策略</title><link href="/shi-shi-ce-lue.html" rel="alternate"></link><updated>2013-12-18T00:00:00+08:00</updated><author><name>haoyuan.huhy@gmail.com</name></author><id>tag:,2013-12-18:shi-shi-ce-lue.html</id><summary type="html">&lt;p&gt;传统的推荐以离线为主， 以预测用户偏好品牌为例，大致分为这几个步骤:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;离线采集计算用户， 品牌等各个维度的特征。&lt;/li&gt;
 &lt;li&gt;根据业务目标给出样本集合， 比如比较典型的CTR， 对于给定样本数据， 点击为正例， 不点击为负例。候选集的挑选有时候充满了trick， 尤其在业务的主体流量不是推荐的时候。&lt;/li&gt;

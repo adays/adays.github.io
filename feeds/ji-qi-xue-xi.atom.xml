@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>One Day</title><link href="/" rel="alternate"></link><link href="/feeds/ji-qi-xue-xi.atom.xml" rel="self"></link><id>/</id><updated>2014-09-12T00:00:00+08:00</updated><entry><title>learning to rank</title><link href="/learning-to-rank.html" rel="alternate"></link><updated>2014-09-12T00:00:00+08:00</updated><author><name>haoyuan.huhy@gmail.com</name></author><id>tag:,2014-09-12:learning-to-rank.html</id><summary type="html">&lt;h1&gt;历史阶段&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Optimizing search engines using clickthrough data, T Joachims, KDD 02——ranksvm的提出。&lt;/li&gt;
+&lt;li&gt;Efficient algorithms for ranking with SVMs, O Chapelle——提出primal SVM提升效率。&lt;/li&gt;
+&lt;li&gt;Person Re-Identification by Support Vector Ranking, BMVC2010——提出Ensemble RankSVM解决memory consumption问题。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1&gt;svm算法描述&lt;/h1&gt;
+&lt;p&gt;svm求解的目标是能够正确划分数据集并且几何间隔最大的分离超平面， 与感知机的求解误分类最小的策略有所不同。我们这里仅以线性svm为例进行介绍。&lt;/p&gt;
+&lt;p&gt;对于超平面(w, b), 样本点$(x_i, y_i)$, 几何间隔定义为：&lt;/p&gt;
+&lt;p&gt;$\gamma_i = y_i (\frac{w}{||w||} \cdot x_i + \frac{b}{||w||})$&lt;/p&gt;
+&lt;p&gt;超平面(w, b)对于训练数据集T的几何间隔定义为：&lt;/p&gt;
+&lt;p&gt;$\gamma = min(\gamma_i)$&lt;/p&gt;
+&lt;p&gt;几何间隔最大化直观的解释是，以充分大的确信度对训练数据进行分类， 也就是说， 不仅能将正负实例点分开， 而且对最难分的实例点（离超平面最近的点）也有足够大的确定度将它们分开， 这样的超平面对未知的新实例有很好的分类与猜测能力。 
+具体的， 这个问题可以表述为：
+$max \ \gamma$&lt;/p&gt;
+&lt;p&gt;$s.t. y_i (\frac{w}{||w||} \cdot x_i + \frac{b}{||w||}) \ge \gamma$&lt;/p&gt;
+&lt;p&gt;经过变化后， 问题等价位求如下的最优化问题：&lt;/p&gt;
+&lt;p&gt;$min \frac {1}{2}||w||^2$&lt;/p&gt;
+&lt;p&gt;$s.t.    y_i(w \cdot xi + b) - 1 \ge 0$&lt;/p&gt;
+&lt;p&gt;现实中的问题很少能完全做到线性可分， 必然存在一些奇异点的干扰， 我们对每个样本点引进一个松弛变量$\xi$, 相应的， 问题等价为：
+$min \frac{1}{2}||w||^2 + C\sum{\xi}$&lt;/p&gt;
+&lt;p&gt;$s.t.    y_i(w \cdot xi + b)  \ge 1 - \xi$&lt;/p&gt;
+&lt;h1&gt;ranksvm算法描述&lt;/h1&gt;
+&lt;p&gt;如上所述，在svm中是要找到分类超平面使正负例的几何间隔最大化，在ranking问题中不存在绝对的正负例，而是要使得正确匹配的得分$x_{s}^{+}$大于错误匹配的得分$x_{s}^{-}$，即
+$(x_{s}^{+}-x_{s}^{-})&amp;gt;0$,并且使得$(x_{s}^{+}-x_{s}^{-})$最大化。&lt;/p&gt;
+&lt;p&gt;定义查询样本x对于样本xi匹配的得分$x_{s}:  x_{s}=w^{T}|x-x_{i}| $; $|x-x_{i}|$表示每一维特征都对应相减，得到差值向量，预测阶段基于差值做出预测和排序。&lt;/p&gt;
+&lt;h1&gt;训练过程&lt;/h1&gt;
+&lt;p&gt;为了获得$w^{T}$，我们定义：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;训练集$X={（xi，yi）}，i=1,2，……m；$&lt;/li&gt;
+&lt;li&gt;$xi$为特征向量&lt;/li&gt;
+&lt;li&gt;yi为+1或者-1&lt;/li&gt;
+&lt;li&gt;对于每一个训练样本xi，X中与xi匹配的正例样本构成集合$d_{i}^{+} = \lbrace x_{i,1}^{+},x_{i,2}^{+}...x_{i,m^{+}}^{+}  \rbrace$&lt;/li&gt;
+&lt;li&gt;X中与xi匹不配的负例样本构成集合$d_{i}^{-}= \lbrace x_{i,1}^{-},x_{i,2}^{-}...x_{i,m}^{-}  \rbrace；m^{+},m^{-}$分别为正负样本数量，存在关系$m^{+}+m^{-}=m$。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;归纳起来，就是对训练样本集中每个样本xi，都存在若干正负例的score pairwise，把训练集中所有score pairwise的集合用P表示，即$P={（x_{s}^{+},x_{s}^{-}）}$,作为训练阶段的输入;&lt;/p&gt;
+&lt;p&gt;综合之前讲述的svm最优化表述，RankSVM就可得到如下形式：
+$ MAX w^{T}(x_{s}^{+}-x_{s}^{-});  $&lt;/p&gt;
+&lt;p&gt;$s.t. w^{T}(x_{s}^{+}-x_{s}^{-})&amp;gt;0$&lt;/p&gt;
+&lt;p&gt;即：
+$ min \frac{1}{2}||w||^{2}+C\sum\xi _{s} $&lt;/p&gt;
+&lt;p&gt;$ s.t. w^{T}(x_{s}^{+}-x_{s}^{-})\geq 1-\xi _{s}。 $&lt;/p&gt;
+&lt;p&gt;以上就是RankSVM的基本思想，ranksvm目前广泛用于pair wise的训练方式。&lt;/p&gt;
+&lt;h1&gt;优化&lt;/h1&gt;
+&lt;p&gt;在实际应用中， postive和negative的数量都比较巨大的情况下， ranksvm几乎不可用， 按照工业界以能够处理所有的数据优先于设计精巧的模型原则， 我们修改了ranksvm的loss，使得他做到线性的复杂度。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;PairWise Loss:
+$ L_{rank} (f;S) = \frac {1} {mn} \sum_{j=1}^{m}\sum_{i=1}^{n} 1{\hskip -2.5 pt}\hbox{I}(f(x_i)^+ \le (f(x_j^-)) $&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Down Sampling PairWise Loss:
+$ L_{rank} (f;S) = \frac {1} {n} \sum_{i=1}^{n} 1{\hskip -2.5 pt}\hbox{I}(f(x_i)^+ \le rand(f(x^-)) $&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;通过这种方式， 能将复杂度从 $ 2 \cdot n \cdot m  $ 下降到 $2 \cdot n$。
+同时在实践中表明， 由于能够处理的数据样本数目和维度大大提升， down sampling的方式表现优于标准的ranksvm。&lt;/p&gt;
+&lt;h1&gt;tips&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;L1范数:  ||x|| 为x向量各个元素绝对值之和。公式：$|X|=\sum{|x_i|}$&lt;/li&gt;
+&lt;li&gt;L2范数:  ||x||为x向量各个元素平方和的1/2次方，L2范数又称Euclidean范数或者Frobenius范数。公式：$||X||=\sqrt{\sum{x_i^2}})$&lt;/li&gt;
+&lt;li&gt;几何间隔：&lt;/li&gt;
+&lt;li&gt;样本点几何间隔：超平面(w, b)和样本点(xi, yi)的距离$|w \cdot x_i + b|$表示分类预测的确信程度， 而$w \cdot x_i + b$符号是否一致表示了分类是否正确， 做归一化之后表示为：$\gamma_i = y_i (\frac{w}{||w||} \cdot x_i + \frac{b}{||w||})$&lt;/li&gt;
+&lt;li&gt;平面几何间隔： 超平面(w, b)关于训练数据集T的几何间隔定义为： $\gamma = min(\gamma_i)$&lt;/li&gt;
+&lt;li&gt;支持向量：样本点中与超平面距离最近的点。&lt;/li&gt;
+&lt;/ul&gt;&lt;script type= "text/javascript"&gt;
+    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+        var mathjaxscript = document.createElement('script');
+        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+        mathjaxscript.type = 'text/javascript';
+        mathjaxscript.src = 'https:' == document.location.protocol
+                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" +
+            "    config: ['MMLorHTML.js']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    displayAlign: 'center'," +
+            "    displayIndent: '0em'," +
+            "    showMathMenu: true," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['$','$'] ], " +
+            "        displayMath: [ ['$$','$$'] ]," +
+            "        processEscapes: true," +
+            "        preview: 'TeX'," +
+            "    }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+    }
+&lt;/script&gt;
+</summary></entry><entry><title>机器学习的野路子</title><link href="/ji-qi-xue-xi-de-ye-lu-zi.html" rel="alternate"></link><updated>2014-08-19T00:00:00+08:00</updated><author><name>haoyuan.huhy@gmail.com</name></author><id>tag:,2014-08-19:ji-qi-xue-xi-de-ye-lu-zi.html</id><summary type="html">&lt;h1&gt;前言&lt;/h1&gt;
+&lt;p&gt;机器学习很大程度上归为三个步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;问题定义&lt;/li&gt;
+&lt;li&gt;数据准备&lt;/li&gt;
+&lt;li&gt;特征工程&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在漫漫长河中， 各路人士留下个各种民间智慧。&lt;/p&gt;
+&lt;h1&gt;ABE：永远在融合&lt;/h1&gt;
+&lt;p&gt;不管怎么样， ensembleing， 免费的午餐。&lt;/p&gt;
+&lt;h1&gt;高置信度下才自动允许或者自动禁止&lt;/h1&gt;
+&lt;h1&gt;Feature Hash&lt;/h1&gt;
+&lt;p&gt;将高纬度的特征利用hash函数映射到低纬度的特征。&lt;/p&gt;
+&lt;h1&gt;样本严重不均衡&lt;/h1&gt;
+&lt;p&gt;将分类问题换成rank问题。&lt;/p&gt;
+&lt;h1&gt;一坨坨的分类器&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;bad， good&lt;/li&gt;
+&lt;li&gt;bad a， bad b&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;性能瓶颈&lt;/h1&gt;
+&lt;p&gt;十有八九在特征提取&lt;/p&gt;
+&lt;h1&gt;指标监控&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;准确率， 召回率&lt;/li&gt;
+&lt;li&gt;输入的特征分布&lt;/li&gt;
+&lt;li&gt;输出的得分分布&lt;/li&gt;
+&lt;li&gt;输出的分类结果分布&lt;/li&gt;
+&lt;li&gt;人工介入&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;专家智慧&lt;/h1&gt;
+&lt;p&gt;有时候允许砖家来拍规则， 前提的确是砖家&lt;/p&gt;</summary></entry></feed>
