@@ -66,7 +66,8 @@
 &lt;li&gt;一旦cluster内有股票涨停， 买入cluster内的股票&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3&gt;end&lt;/h3&gt;
-&lt;p&gt;就是这么简单粗暴。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">haoyuan.huhy@gmail.com</dc:creator><pubDate>Tue, 23 Sep 2014 00:00:00 +0800</pubDate><guid>tag:,2014-09-23:pair-wise-in-stock.html</guid></item><item><title>learning to rank</title><link>/learning-to-rank.html</link><description>&lt;h1&gt;历史阶段&lt;/h1&gt;
+&lt;p&gt;就是这么简单粗暴。&lt;/p&gt;
+&lt;p&gt;其实还有点是最大的缺陷， 就是我穷我没钱， 洗洗睡去了。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">haoyuan.huhy@gmail.com</dc:creator><pubDate>Tue, 23 Sep 2014 00:00:00 +0800</pubDate><guid>tag:,2014-09-23:pair-wise-in-stock.html</guid></item><item><title>learning to rank</title><link>/learning-to-rank.html</link><description>&lt;h1&gt;历史阶段&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;Optimizing search engines using clickthrough data, T Joachims, KDD 02——ranksvm的提出。&lt;/li&gt;
 &lt;li&gt;Efficient algorithms for ranking with SVMs, O Chapelle——提出primal SVM提升效率。&lt;/li&gt;
