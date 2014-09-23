@@ -1,0 +1,42 @@
+title:pair wise in stock
+date:2014-09-23 
+category:机器学习
+
+### background
+做了这么多年推荐， 有个感悟， 绝对值的预测是不靠谱的， 但是相对关系是靠谱的。
+
+你说A会涨， 那除非是内幕， 否则很可能是不靠谱的。但是你要说A比B明天涨的多， 这个算法还是做得到的。
+
+### why
+pair wise learning 在工业界是很实在的技术， 鲁棒耐操， 他讲不怎么靠谱的回归问题转化成为一个01的分类问题。
+
+### result
+
+#![](http://orange-tree.oss-cn-hangzhou.aliyuncs.com/blog-images/Screenshot_2014-09-23-17-58-43_1.jpg)
+#![](http://orange-tree.oss-cn-hangzhou.aliyuncs.com/blog-images/Screenshot_2014-09-23-17-58-43_2.jpg)
+
+stock name| improve
+--|--
+万科A|18.9%
+世纪星源|57.3%
+招商地产|0.9%
+富奥股份|18.9%
+宝安地产|19.6%
+中金岭南|27.9%
+深圳华强|-3.128%
+盐田港|14.6%
+太极股份|44.5%
+丹邦科技|31.3%
+
+从4月份开始接触股市至今， 收益应该跑赢了大部分的基金。
+
+### how
+中国股市没有卖空， 这点比较讨厌， 所以这个公式是不完备的，但是在大盘跌的时候， 至少有一定的抵抗力。
+
+1. 计算相似度
+2. 选出相似度最高的一个cluster
+3. 一旦cluster内有股票涨停， 买入cluster内的股票
+
+### end
+
+就是这么简单粗暴。
