@@ -67,7 +67,11 @@
 &lt;/ol&gt;
 &lt;h3&gt;end&lt;/h3&gt;
 &lt;p&gt;就是这么简单粗暴。&lt;/p&gt;
-&lt;p&gt;其实还有点是最大的缺陷， 就是我穷我没钱， 洗洗睡去了。&lt;/p&gt;</summary></entry><entry><title>learning to rank</title><link href="/learning-to-rank.html" rel="alternate"></link><updated>2014-09-12T00:00:00+08:00</updated><author><name>haoyuan.huhy@gmail.com</name></author><id>tag:,2014-09-12:learning-to-rank.html</id><summary type="html">&lt;h1&gt;历史阶段&lt;/h1&gt;
+&lt;p&gt;妥妥的， 比内幕靠谱多了。&lt;/p&gt;
+&lt;h3&gt;收益曲线&lt;/h3&gt;
+&lt;p&gt;同学给做的收益曲线， 要是严格按照策略操作大概是这样子的。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://orange-tree.oss-cn-hangzhou.aliyuncs.com/blog-images/shouyi.jpg" style=" height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;p&gt;其实我看不懂， 很厉害的样子， 似乎最终是400%的年收益。&lt;/p&gt;</summary></entry><entry><title>learning to rank</title><link href="/learning-to-rank.html" rel="alternate"></link><updated>2014-09-12T00:00:00+08:00</updated><author><name>haoyuan.huhy@gmail.com</name></author><id>tag:,2014-09-12:learning-to-rank.html</id><summary type="html">&lt;h1&gt;历史阶段&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;Optimizing search engines using clickthrough data, T Joachims, KDD 02——ranksvm的提出。&lt;/li&gt;
 &lt;li&gt;Efficient algorithms for ranking with SVMs, O Chapelle——提出primal SVM提升效率。&lt;/li&gt;
